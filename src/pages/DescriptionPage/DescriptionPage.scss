@@ -1,0 +1,151 @@
+.description-page {
+    height: inherit;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+
+    .breadcrumb-nav {
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        .breadcrumb-button {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            background: none;
+            border: none;
+            color: $color-primary;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+    }
+
+    .page-header-wrapper {
+        padding: 20px 40px 0 20px;
+
+        @media (max-width: $breakpoint-mobile) {
+            padding: 0;
+
+            .page-header-content {
+                padding: 20px 20px 0 20px;
+            }
+        }
+    }
+
+    .course-details-content {
+        display: flex;
+        gap: 40px;
+        background-color: $color-background;
+        padding: 30px 40px 40px 20px;
+        border-radius: 8px;
+        flex: 1;
+        color: $color-text;
+
+        .course-info-section {
+            flex: 1;
+            min-width: 300px;
+
+            .course-title {
+                margin-bottom: 20px;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            .course-info-list {
+                margin: 0;
+
+                .course-info-item {
+                    justify-content: space-between;
+                    margin-bottom: 25px;
+                    font-size: 1rem;
+                    line-height: 1.4;
+
+                    .label {
+                        font-weight: 600;
+                        color: $color-text-secondary;
+                    }
+
+                    .value {
+                        color: $color-text;
+                    }
+                }
+            }
+        }
+
+        .course-summary-panel {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .course-summary-card,
+            .course-share-card {
+                background: $color-surface;
+                border-radius: 8px;
+                padding: 20px 30px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .course-summary-card {
+                .course-summary-item {
+                    margin-bottom: 8px;
+
+                    .course-summary-item-title {
+                        font-weight: 600;
+                        color: $color-text-secondary;
+                    }
+                }
+            }
+
+            .course-share-card {
+                .share-title {
+                    margin-bottom: 5px;
+                }
+
+                .share-actions {
+                    display: flex;
+                    gap: 10px;
+
+                    .share-button {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        align-items: center;
+                        justify-content: center;
+                        background: $color-background;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        padding: 6px;
+
+                        &:hover,
+                        &:focus {
+                            outline: none;
+                            background-color: #e5e5e5;
+                            border-color: #999;
+                        }
+
+                        .copy-course-link-logo,
+                        .share-course-logo {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            flex-flow: column-reverse nowrap;
+            gap: 20px;
+            padding: 20px;
+
+            .course-summary-panel {
+                width: 100%;
+            }
+        }
+    }
+}
