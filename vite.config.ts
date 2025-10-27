@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-    css: {
+  css: {
     preprocessorOptions: {
       scss: {
         additionalData: `@use "@/assets/styles/variables" as *;`
@@ -14,5 +14,11 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    css: true,
   }
 });
